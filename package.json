@@ -1,0 +1,27 @@
+{
+    "name": "bxb-notification",
+    "version": "0.1.0",
+    "author": "Рустам Гимранов",
+    "license": "MIT",
+    "keywords": [
+        "vue.js",
+        "notification",
+        "message"
+    ],
+    "description": "Vue.js component [notification] from BixBite.",
+    "main": "src/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/russsiq/bxb-notification.git"
+    },
+    "peerDependencies": {
+        "vue": "^2.5.17"
+    },
+    "bugs": {
+        "url": "https://github.com/russsiq/bxb-notification/issues"
+    },
+    "homepage": "https://github.com/russsiq/bxb-notification#readme"
+}
