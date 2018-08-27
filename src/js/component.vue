@@ -1,6 +1,6 @@
 <template lang="html">
     <div class="notification">
-        <transition-group name="fade" tag="div">
+        <transition-group name="fade-in-down" tag="div">
             <div class="notification_item" :style="item.style" v-for="(item, index) in items" :key="index">
                 <button type="button" class="notification_item__close" @click="dismiss(index)">&times;</button>
                 <h5 class="notification_item__heading" v-if="item.title">{{ item.title }}</h5>
@@ -71,13 +71,19 @@
                 margin-top: 0;
                 margin-bottom: .65rem;
             }
-            &.fade-enter-active,
-            &.fade-leave-active {
+            &.fade-in-down-enter-active,
+            &.fade-in-down-leave-active {
                 transition: opacity .5s;
             }
-            &.fade-enter,
-            &.fade-leave-to {
+            &.fade-in-down-enter,
+            &.fade-in-down-leave-to {
                 opacity: 0;
+            }
+            &.fade-in-down-enter-active {
+                animation: fade-in-down .5s;
+            }
+            &.fade-in-down-leave-active {
+                animation: fade-in-down .5s reverse;
             }
         }
     }
@@ -97,6 +103,16 @@
         .notification {
             flex: 0 0 25%;
             max-width: 25%;
+        }
+    }
+    @keyframes fade-in-down {
+        0% {
+            opacity: 0;
+            transform: translate3d(0, -100%, 0);
+        }
+        100% {
+            opacity: 1;
+            transform: none;
         }
     }
 </style>
