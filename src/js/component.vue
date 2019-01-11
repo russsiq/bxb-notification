@@ -1,7 +1,7 @@
-<template lang="html">
+<template>
     <div class="notification">
         <transition-group name="fade-in-down" tag="div">
-            <div class="notification_item" :style="item.style" v-for="(item, index) in items" :key="index">
+            <div class="notification_item" :style="item.style" v-for="(item, index) in items" :key="index + 0">
                 <button type="button" class="notification_item__close" @click="dismiss(index)">&times;</button>
                 <h5 class="notification_item__heading" v-if="item.title">{{ item.title }}</h5>
                 <span v-html="item.message"></span>

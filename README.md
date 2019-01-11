@@ -59,4 +59,4 @@ Notification.error(options);
 
 ### Лицензия
 
-bxb-notification - программное обеспечение с открытым исходным кодом, распространяющееся по лицензии [MIT](https://choosealicense.com/licenses/mit/).
+bxb-notification - программное обеспечение с открытым исходным кодом, распространяющееся по лицензии [MIT license](https://choosealicense.com/licenses/mit/).
