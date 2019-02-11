@@ -34,7 +34,7 @@ export default {
                 backgroundColor:
                     params.type == 'success' ? successColor :
                     params.type == 'warning' ? warningColor :
-                    params.type == 'error' ? errorColor :
+                    params.type == 'error' || params.type == 'danger' ? errorColor :
                     infoColor
             }
         });
