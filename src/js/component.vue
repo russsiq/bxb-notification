@@ -10,7 +10,7 @@
     </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
     export default {
         beforeMount() {
             document.querySelector('body').appendChild(this.$el)
