@@ -2,15 +2,18 @@ import Vue from 'vue'
 import Component from './component.vue'
 
 let notify,
-    emptyMessage = 'Message is empty!',
-    infoColor = 'rgb(91, 192, 222)',
-    successColor = 'rgb(67, 172, 106)',
-    warningColor = 'rgb(233, 144, 2)',
-    errorColor = 'rgb(240, 65, 36)';
+    emptyMessage = 'Message is empty!'
+    
+const TYPE_MAP = {
+    info: 'rgb(91, 192, 222)',
+    success: 'rgb(67, 172, 106)',
+    warning: 'rgb(233, 144, 2)',
+    error: 'rgb(240, 65, 36)',
+}
 
 export default {
     show(params = {}) {
-        if (typeof notify === "undefined") {
+        if ('undefined' === typeof notify) {
             let Notification = Vue.extend(Component),
                 element = document.createElement('div');
                 
@@ -31,11 +34,7 @@ export default {
             title: params.title || false,
             message: params.message || emptyMessage,
             style: {
-                backgroundColor:
-                    params.type == 'success' ? successColor :
-                    params.type == 'warning' ? warningColor :
-                    params.type == 'error' || params.type == 'danger' ? errorColor :
-                    infoColor
+                backgroundColor: TYPE_MAP[params.type || info]
             }
         });
         
@@ -70,5 +69,5 @@ export default {
 
     dismiss(index) {
         notify.$data.items.splice(index, 1);
-    }
+    },
 }
